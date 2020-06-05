@@ -20,3 +20,14 @@ let lastQuotes = [
 ];
 
 console.log(firstQuotes, secondQuotes, lastQuotes);
+
+// This function generate the quotations
+function generateQuote() {
+        const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
+        const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
+        const lastRandom = Math.floor(Math.random() * (lastQuotes.length));
+        
+        return firstQuotes[firstRandom]+ ` ` + secondQuotes[secondRandom] + ` ` + lastQuotes[lastRandom] + ` `;
+}
+
+console.log(generateQuote(firstQuotes, secondQuotes, lastQuotes));
