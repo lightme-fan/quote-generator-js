@@ -27,7 +27,9 @@ function generateQuote() {
         const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
         const lastRandom = Math.floor(Math.random() * (lastQuotes.length));
 
-        return firstQuotes[firstRandom]+ ` ` + secondQuotes[secondRandom] + ` ` + lastQuotes[lastRandom] + ` `;
+        return ` ${firstQuotes[firstRandom]} ${secondQuotes[secondRandom]} ${lastQuotes[lastRandom]}`;        
 }
 
 console.log(generateQuote());
+
+
