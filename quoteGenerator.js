@@ -23,13 +23,17 @@ console.log(firstQuotes, secondQuotes, lastQuotes);
 
 // This function generate the quotations
 function generateQuote() {
-        const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
-        const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
-        const lastRandom = Math.floor(Math.random() * (lastQuotes.length));
+    const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
+    const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
+    const lastRandom = Math.floor(Math.random() * (lastQuotes.length)); 
 
-        return ` ${firstQuotes[firstRandom]} ${secondQuotes[secondRandom]} ${lastQuotes[lastRandom]}`;        
+    return ` ${firstQuotes[firstRandom]} ${secondQuotes[secondRandom]} ${lastQuotes[lastRandom]}`;
 }
-
 console.log(generateQuote());
 
-
+function numberOfQutes() { 
+    let num = 0;
+    for (let i = 0; i < firstQuotes.length + secondQuotes.length + lastQuotes.length; i++) {
+        num += firstQuotes[i].pop() + secondQuotes[i].pop() + lastQuotes[i].pop();
+    }
+}
