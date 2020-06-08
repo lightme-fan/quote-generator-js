@@ -22,9 +22,20 @@ let lastQuotes = [
 console.log(firstQuotes, secondQuotes, lastQuotes);
 
 // This function generate the quotations
-const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
-const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
-const lastRandom = Math.floor(Math.random() * (lastQuotes.length)); 
 
-let quote = ` ${firstQuotes[firstRandom]} ${secondQuotes[secondRandom]} ${lastQuotes[lastRandom]}`;
-console.log(quote);
+function generateQuote(randomQuote) {
+    const userRondomQuote  = prompt("How many random quotes would you like?");
+    if (userRondomQuote > 0 && userRondomQuote < 6) {    
+        for (let num = 0; num < userRondomQuote; num++) {
+            const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
+            const secondRandom = Math.floor(Math.random() * (secondQuotes.length));
+            const lastRandom = Math.floor(Math.random() * (lastQuotes.length)); 
+            
+            const randomQuote = ` ${firstQuotes[firstRandom]} ${secondQuotes[secondRandom]} ${lastQuotes[lastRandom]}`;
+            console.log(randomQuote);
+        } 
+    } else {
+        return randomQuote;
+    }
+}
+generateQuote();
