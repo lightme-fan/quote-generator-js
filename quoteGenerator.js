@@ -39,3 +39,45 @@ function generateQuote(randomQuote) {
     }
 }
 generateQuote();
+
+let firstNewQuote = [
+    "I love you the more in that I believe you had liked me for my own sake and for nothing else",
+    "But man is not made for defeat. A man can be destroyed but not defeated",
+	"When you reach the end of your rope, tie a knot in it and hang on",
+];
+
+let secondNewQuote = [
+    "Cats are angels with fur.",
+    "An animal’s eyes have the power to speak a great language.",
+    "The better I get to know men, the more I find myself loving dogs.",
+];
+
+let lastNewQuote = [
+    "Dogs are our link to paradise. They don’t know evil or jealousy or discontent",
+    "An animal’s eyes have the power to speak a great language.",
+    "There is nothing permanent except change.",
+];
+
+const newGenerateQuote = () => {
+	let randomIndex1 = Math.floor(Math.random() * firstNewQuote.length);
+	let randomIndex2 = Math.floor(Math.random() * secondNewQuote.length);
+	let randomIndex3 = Math.floor(Math.random() * lastNewQuote.length);
+	let string1 = firstNewQuote[randomIndex1];
+	let string2 = secondNewQuote[randomIndex2];
+	let string3 = lastdNewQuote[randomIndex3];
+	let quote = `${string1} ${string2} ${string3}`;
+	return quote;
+};
+
+console.log(firstNewQuote, secondNewQuote, lastNewQuote);
+
+// const user = prompt("Do you want to choose type of quotation");
+// console.log(user);
+
+const answer = "";
+while (answer === "yes") {
+    if (answer === "yes") {
+        // answer = prompt("Enter the type of quotation you want: ");
+        answer = prompt("Do you want to choose type of quotation");
+    } 
+}
