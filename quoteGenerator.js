@@ -19,8 +19,6 @@ let lastQuotes = [
     'You need to tell me why you don\'t know exactly what you have known so far.' 
 ];
 
-console.log(firstQuotes, secondQuotes, lastQuotes);
-
 // This function generate the quotations
 
 function generateQuote(randomQuote) {
@@ -99,7 +97,7 @@ if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
                 if (typesOfQuotation === "2") {
                     console.log(newGenerateQuote());
                 }
-            }    
+            } 
         }
     }
 }
