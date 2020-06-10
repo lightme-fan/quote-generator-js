@@ -75,8 +75,8 @@ const newGenerateQuote = () => {
 // Prompt to ask the user how many times they want to generate the quotation generator. 
 const numberOfTypeOfQuotation = prompt("How many times do you to want to generate a random quote?");
 
-
-if (numberOfTypeOfQuotation >= 1 && numberOfTypeOfQuotation <= 5) {
+// 
+if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
   const typesOfQuotation = prompt("Choose between type 1 and type 2");
   for (let num = 0; num < numberOfTypeOfQuotation; num++) {
     if (typesOfQuotation === "1") {
@@ -89,7 +89,7 @@ if (numberOfTypeOfQuotation >= 1 && numberOfTypeOfQuotation <= 5) {
 } else {
   while (numberOfTypeOfQuotation < 1 || numberOfTypeOfQuotation > 5) {
     numberOfTypeOfQuotation = prompt("How many time do you to want to generate a random quote?");
-    if (numberOfTypeOfQuotation >= 1 && numberOfTypeOfQuotation <= 5) {
+    if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
       const typesOfQuotation = prompt("Choose between type 1 and type 2");
       for (let num = 0; num < numberOfTypeOfQuotation; num++) {
         if (typesOfQuotation === "1") {
