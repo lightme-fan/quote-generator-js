@@ -86,7 +86,7 @@ if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
         }
     }
 }   else   {
-    while (numberOfTypeOfQuotation < 1 || numberOfTypeOfQuotation > 5) {
+    while (numberOfTypeOfQuotation < 0 || numberOfTypeOfQuotation > 6) {
         numberOfTypeOfQuotation = prompt("How many time do you to want to generate a random quote?");
         if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
             const typesOfQuotation = prompt("Choose between type 1 and type 2");
