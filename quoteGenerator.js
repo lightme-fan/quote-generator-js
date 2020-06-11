@@ -22,7 +22,7 @@ let lastQuotes = [
 // This function generate the quotations
 
 function generateQuote(randomQuote) {
-    const userRondomQuote  = prompt("How many random quotes would you like?");
+    const userRondomQuote  = Number(prompt("How many random quotes would you like?"));
     if (userRondomQuote > 0 && userRondomQuote < 6) {    
         for (let num = 0; num < userRondomQuote; num++) {
             const firstRandom = Math.floor(Math.random() * (firstQuotes.length));
@@ -70,34 +70,38 @@ const newGenerateQuote = () => {
     return quote;
 };
 
-// Prompt to ask the user how many times they want to generate the quotation generator. 
-const numberOfTypeOfQuotation = prompt("How many times do you to want to generate a random quote?");
+let doAgain = "yes";
+while (doAgain === "yes") {
+    // Prompt to ask the user how many times they want to generate the quotation generator. 
+    const numberOfTypeOfQuotation = prompt("How many times do you to want to generate a random quote?");
 
-// Check if the prompt give us something between 1 and 5
-if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
-//    we're going to use a loop somewhere, and it's going to last the number of times that the user entered in the prompt!  
-    const typesOfQuotation = prompt("Choose between type 1 and type 2");
-    for (let num = 0; num < numberOfTypeOfQuotation; num++) {
-        if (typesOfQuotation === "1") {
-            console.log(generateQuote());
+    // Check if the prompt give us something between 1 and 5
+    if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
+    //    we're going to use a loop somewhere, and it's going to last the number of times that the user entered in the prompt!  
+        const typesOfQuotation = prompt("Choose between type 1 and type 2");
+        for (let num = 0; num < numberOfTypeOfQuotation; num++) {
+            if (typesOfQuotation === "1") {
+                console.log(generateQuote());
+            }
+            if (typesOfQuotation === "2") {
+            console.log(newGenerateQuote());
+            }
         }
-        if (typesOfQuotation === "2") {
-        console.log(newGenerateQuote());
+    }   else   {
+        while (numberOfTypeOfQuotation < 0 || numberOfTypeOfQuotation > 6) {
+            numberOfTypeOfQuotation = prompt("How many time do you to want to generate a random quote?");
+            if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
+                const typesOfQuotation = prompt("Choose between type 1 and type 2");
+                for (let num = 0; num < numberOfTypeOfQuotation; num++) {
+                    if (typesOfQuotation === "1") {
+                        console.log(generateQuote());
+                    }
+                    if (typesOfQuotation === "2") {
+                        console.log(newGenerateQuote());
+                    }
+                } 
+            }
         }
     }
-}   else   {
-    while (numberOfTypeOfQuotation < 0 || numberOfTypeOfQuotation > 6) {
-        numberOfTypeOfQuotation = prompt("How many time do you to want to generate a random quote?");
-        if (numberOfTypeOfQuotation > 0 && numberOfTypeOfQuotation < 6) {
-            const typesOfQuotation = prompt("Choose between type 1 and type 2");
-            for (let num = 0; num < numberOfTypeOfQuotation; num++) {
-                if (typesOfQuotation === "1") {
-                    console.log(generateQuote());
-                }
-                if (typesOfQuotation === "2") {
-                    console.log(newGenerateQuote());
-                }
-            } 
-        }
-    }
+    doAgain = prompt("Do you still to program again? (yes, or no)")
 }
